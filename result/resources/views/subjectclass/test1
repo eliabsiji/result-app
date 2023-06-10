@@ -1,0 +1,84 @@
+@extends('layouts.master')
+@section('content')
+
+<div class="content">
+    <div class="content-header">
+        <div class="leftside-content-header">
+            <ul class="breadcrumbs">
+                <li><i class="fa fa-table" aria-hidden="true"></i><a href="#">Subject Class</a></li>
+                <li><a>Subject Class Management</a></li>
+            </ul>
+        </div>
+    </div>
+    @if (\Session::has('status'))
+    <div class="alert alert-warning fade in">
+     <a href="#" class="close" data-dismiss="alert">&times;</a>
+         <p>{{ \Session::get('status') }}</p>
+     </div>
+ @endif
+     @if (\Session::has('success'))
+    <div class="alert alert-warning fade in">
+     <a href="#" class="close" data-dismiss="alert">&times;</a>
+         <p>{{\Session::get('success')}}</p>
+     </div>
+ @endif
+ <span class="float-right">
+    <a class="btn btn-primary  btn fa fa-plus" href="{{ route('subjectclass.create') }}">  Assign Subject to Class</a>
+</span>
+<div class="animated fadeInUp">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="panel">
+                <div class="panel-header panel-success">
+                    <h3 class="panel-title">Panel Actions</h3>
+                    <div class="panel-actions">
+                        <ul>
+                            <li class="action toggle-panel panel-expand"><span></span></li>
+                            <li class="action">
+                                <a class="dropdown-toggle weight-500" id="examplePanelDropdown" data-toggle="dropdown" href="#" aria-expanded="false" role="button">
+
+                                    <span class="fa fa-bars action" aria-hidden="true"></span>
+
+                                </a>
+                                <ul class="dropdown-menu bullet dropdown-menu-right"  role="menu">
+
+                                    <li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-trash" aria-hidden="true"></i> Delete</a></li>
+                                    <li class="divider" role="presentation"></li>
+                                    <li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-settings" aria-hidden="true"></i> Settings</a></li>
+                                </ul>
+                            </li>
+                            <li class="action remove-panel"><span class="fa fa-times action" aria-hidden="true"></span></li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="panel-content">
+                    <div class="widget-list list-left-element list-sm">
+                        <ul>
+
+                            <li>
+                                <a href="#">
+                                    <div class="left-element"><i class="fa fa-tasks color-success"></i></div>
+                                    <div class="text">
+                                        <span class="title">14 Task</span>
+                                        <span class="subtitle">completed</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+     </div>
+    </div>
+</div>
+
+
+@endsection
