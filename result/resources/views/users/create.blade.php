@@ -10,6 +10,7 @@
                     </ul>
                 </div>
             </div>
+            @if (count($errors) > 0)
             <div class="row animated fadeInUp">
                   @if (count($errors) > 0)
             <div class="alert alert-warning fade in">
@@ -20,8 +21,9 @@
                         <li>{{ $error }}</li>
                     @endforeach
                 </ul>
+             </div>
             </div>
-        @endif
+               @endif
                 <div class="col-sm-12 col-md-8 col-md-offset-2">
                    <span class="float-right">
                     <a class="btn btn-primary" href="{{ route('users.index') }}"> Back to Users</a>
@@ -30,7 +32,7 @@
                         <div class="panel-content">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <form  ole="form" id="inline-validation" class="form-horizontal form-stripe" action="{{ route('users.store') }}" method="POST">
+                                    <form  role="form" id="inline-validation" class="form-horizontal form-stripe" action="{{ route('users.store') }}" method="POST">
                                      @csrf
                                         <div class="form-group">
                                             <label for="name" class="col-sm-3 control-label">Name<span class="required">*</span></label>
